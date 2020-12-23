@@ -1,6 +1,7 @@
 import typescript from 'rollup-plugin-typescript2';
 import del from 'rollup-plugin-delete';
 import pkg from './package.json';
+import copy from 'rollup-plugin-copy'
 
 export default [
   {
@@ -11,7 +12,13 @@ export default [
     ],
     plugins: [
       del({ targets: ['dist'] }),
-      typescript(),
+			typescript(),
+			copy({
+				targets: [
+					{ src: ['src/**/*.stories.*'], dest: 'dist/' }
+				],
+				flatten: false
+			})
     ],
     external: Object.keys(pkg.peerDependencies || {}),
   },

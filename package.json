@@ -41,7 +41,7 @@
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -w -c",
-    "release": "np --contents=dist",
+    "release": "np --contents=dist --yolo",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
 	},

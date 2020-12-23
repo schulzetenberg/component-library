@@ -1,7 +1,8 @@
 import Button from './components/button/button';
-import Checkbox from './components/checkbox/checkbox';
+import Checkbox, { CheckboxProps } from './components/checkbox/checkbox';
 
 export {
 	Button,
 	Checkbox,
+	CheckboxProps
 };

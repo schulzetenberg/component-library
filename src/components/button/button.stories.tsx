@@ -3,7 +3,7 @@ import React from 'react';
 // eslint-disable-next-line import/no-unresolved
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import Button from './button';
+import { Button } from '../../';
 
 export default {
   title: 'Components/Shared/Button',

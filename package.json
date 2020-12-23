@@ -41,10 +41,10 @@
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -w -c",
-    "release": "np",
+    "release": "np --contents=dist",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
-  },
+	},
   "browserslist": {
     "production": [
       ">0.2%",

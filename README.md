@@ -19,3 +19,7 @@ Run Storybook in watch mode
 ### `npm build-storybook`
 
 Build Storybook for deployment
+
+### `npm chromatic`
+
+Publish Storybook to Chromatic

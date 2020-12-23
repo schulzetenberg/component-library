@@ -1,31 +1,63 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles, Theme } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
+import { Box, Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) => ({
   errorMessage: {
     color: theme.palette.error.main,
     marginTop: theme.spacing(2),
+    marginRight: theme.spacing(3),
+    marginLeft: theme.spacing(3),
+  },
+  cardContent: {
+    padding: 0,
+  },
+  icon: {
+    margin: theme.spacing(1),
+    color: theme.palette.common.white,
+  },
+  root: {
+    width: '100%',
+  },
+  bullet: {
+    marginRight: theme.spacing(1),
   },
 }));
 
-const ErrorList: React.FC<{
+export interface ErrorListProps {
   errors: string[];
-}> = ({ errors }) => {
+}
+
+const ErrorList: React.FC<ErrorListProps> = ({ errors }) => {
   const classes = useStyles();
 
-  if (!errors || errors.length === 0) {
+  if (!errors || errors.length < 1) {
     return <></>;
   }
 
+  const bullet = <>{errors.length !== 1 && <span className={classes.bullet}>•</span>}</>;
+
   return (
-    <>
-      {errors.map((error: string, index: number) => (
-        <Typography className={classes.errorMessage} key={index} variant="body1" align="center">
-          {error}
-        </Typography>
-      ))}
-    </>
+    <Grid container justify="center">
+      <Grid xs={12} lg={4} item>
+        <Card className={classes.root}>
+          <CardContent className={classes.cardContent}>
+            <Box component="div" m={0} p={0} style={{ backgroundColor: 'red' }}>
+              <ErrorOutlineIcon fontSize="large" className={classes.icon} />
+            </Box>
+            {errors.map((error: string, index: number) => (
+              <Typography className={classes.errorMessage} key={index} variant="body1">
+                {bullet} {error}
+              </Typography>
+            ))}
+          </CardContent>
+        </Card>
+      </Grid>
+    </Grid>
   );
 };
 

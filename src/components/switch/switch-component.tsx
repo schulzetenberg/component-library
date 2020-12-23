@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Switch: React.FC<any> = (props: any) => {
+const SwitchComponent: React.FC<any> = (props: any) => {
   const classes = useStyles();
 
   return (
@@ -57,4 +57,4 @@ const Switch: React.FC<any> = (props: any) => {
   );
 };
 
-export default Switch;
+export default SwitchComponent;

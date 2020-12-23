@@ -20,6 +20,7 @@
     "@types/node": "12.7.1",
     "@types/react": "16.9.17",
     "@types/react-dom": "16.9.4",
+    "@types/react-router-dom": "5.1.2",
     "@types/react-select": "3.0.8",
     "@types/yup": "0.26.26",
     "axios": "0.19.0",
@@ -43,7 +44,8 @@
     "watch": "rollup -w -c",
     "release": "npm publish",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "chromatic": "npx chromatic --project-token zax5idyhwf8 --exit-zero-on-changes"
   },
   "browserslist": {
     "production": [
@@ -67,6 +69,7 @@
     "@storybook/react": "6.1.11",
     "@typescript-eslint/eslint-plugin": "2.14.0",
     "@typescript-eslint/parser": "2.14.0",
+    "chromatic": "5.5.0",
     "eslint": "6.8.0",
     "eslint-config-airbnb": "18.0.1",
     "eslint-config-prettier": "6.9.0",

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import { Button as MaterialButton } from '@material-ui/core';
@@ -14,6 +14,19 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   })
 );
+
+export interface ButtonProps {
+	children: ReactElement;
+	type: string;
+	errors: string[];
+	name: string;
+	register: any;
+	color: string;
+	variant: string;
+	setValue: any;
+	loading: boolean;
+  [x: string]: any;
+};
 
 const Button: React.FC<any> = ({
   children,

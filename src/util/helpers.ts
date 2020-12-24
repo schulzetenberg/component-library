@@ -4,5 +4,3 @@ export const parseCamelCase = (text = ''): string => {
     return str.toUpperCase();
   });
 };
-
-export const test = 'test'; // TODO: delete

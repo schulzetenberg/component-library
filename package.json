@@ -1,6 +1,6 @@
 {
   "name": "@schulzetenberg/component-library",
-  "version": "0.0.7",
+  "version": "1.0.1",
   "private": false,
   "files": [
     "dist"
@@ -42,7 +42,7 @@
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -w -c",
-    "release": "npm publish",
+    "release": "rollup -c && npm publish",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "chromatic": "npx chromatic --project-token zax5idyhwf8 --exit-zero-on-changes"

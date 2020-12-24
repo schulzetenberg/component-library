@@ -42,7 +42,7 @@ const Header: React.FC<{ forceLoggedIn?: boolean }> = ({ forceLoggedIn = false }
     setLoading(true);
 
     try {
-      const response: ServerResponse = await Request.post({ url: '/logout' });
+      await Request.post({ url: '/logout' });
       setSession();
       history.push('/sign-in');
     } catch (e) {

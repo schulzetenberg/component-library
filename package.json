@@ -1,6 +1,6 @@
 {
   "name": "@schulzetenberg/component-library",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
   "files": [
     "dist"
@@ -14,7 +14,14 @@
   "dependencies": {
     "@material-ui/core": "4.11.2",
     "@material-ui/icons": "4.11.2",
-    "@material-ui/lab": "4.0.0-alpha.57",
+		"@material-ui/lab": "4.0.0-alpha.57",
+		"@schulzetenberg/eslint-config-react": "^0.0.13",
+		"@storybook/addon-actions": "6.1.11",
+    "@storybook/addon-essentials": "6.1.11",
+    "@storybook/addon-links": "6.1.11",
+    "@storybook/node-logger": "6.1.11",
+    "@storybook/preset-create-react-app": "3.1.5",
+    "@storybook/react": "6.1.11",
     "@testing-library/react": "9.4.0",
     "@types/classnames": "2.2.9",
     "@types/enzyme": "3.10.4",
@@ -41,7 +48,9 @@
     "react-router-dom": "5.1.2",
     "react-scripts": "3.4.1",
     "react-select": "3.0.8",
-    "react-test-renderer": "16.12.0",
+		"react-test-renderer": "16.12.0",
+		"storybook-dark-mode": "1.0.3",
+    "storybook-react-router": "1.0.8",
     "typescript": "3.7.4",
     "yup": "0.27.0"
   },
@@ -66,19 +75,10 @@
     ]
   },
   "devDependencies": {
-    "@schulzetenberg/eslint-config-react": "^0.0.13",
-    "@storybook/addon-actions": "6.1.11",
-    "@storybook/addon-essentials": "6.1.11",
-    "@storybook/addon-links": "6.1.11",
-    "@storybook/node-logger": "6.1.11",
-    "@storybook/preset-create-react-app": "3.1.5",
-    "@storybook/react": "6.1.11",
     "chromatic": "5.5.0",
     "rollup": "2.35.1",
     "rollup-plugin-copy": "3.3.0",
     "rollup-plugin-delete": "2.0.0",
-    "rollup-plugin-typescript2": "0.29.0",
-    "storybook-dark-mode": "1.0.3",
-    "storybook-react-router": "1.0.8"
+    "rollup-plugin-typescript2": "0.29.0"
   }
 }

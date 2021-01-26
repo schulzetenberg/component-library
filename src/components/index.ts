@@ -9,6 +9,7 @@ import Spinner, { SpinnerProps } from './spinner/spinner';
 import SwitchComponent from './switch/switch-component';
 import SwitchForm from './switch/switch-form';
 import TextField from './text-field/text-field';
+import ErrorBoundary from './error-boundary/error-boundary';
 
 export {
 	Button,
@@ -27,5 +28,6 @@ export {
 	SpinnerProps,
 	SwitchComponent,
 	SwitchForm,
-	TextField
+	TextField,
+	ErrorBoundary,
 };

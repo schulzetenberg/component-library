@@ -9,8 +9,14 @@ const Request = {
         return response.data;
       })
       .catch((err) => {
-        const serverResponse = err.data.error;
-        return Promise.reject([serverResponse]);
+				let errors = err?.data?.errors || ['Unexpected error occured'];
+
+				// In case server returns string instead of array, wrap in an array
+				if(!Array.isArray(errors)) {
+					errors = [errors];
+				}
+
+        return Promise.reject(errors);
       });
   },
 
@@ -22,16 +28,14 @@ const Request = {
         return response.data;
       })
       .catch((err) => {
-        const serverResponse = err.data.error;
-        let errors = [];
+				let errors = err?.data?.errors || ['Unexpected error occured'];
 
-        if (Array.isArray(serverResponse)) {
-          errors = serverResponse.map((error: ResponseValidationError) => error.msg);
-        } else {
-          errors = [serverResponse];
-        }
+				// In case server returns string instead of array, wrap in an array
+				if(!Array.isArray(errors)) {
+					errors = [errors];
+				}
 
-        return Promise.reject([errors]);
+        return Promise.reject(errors);
       });
   },
 };

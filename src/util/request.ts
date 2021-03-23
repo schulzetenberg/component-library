@@ -6,7 +6,7 @@ const Request = {
       .get(url)
       .then((response) => {
         if (response.data.errors) return Promise.reject({ data: { error: response.data.errors } });
-        return response.data;
+        return response;
       })
       .catch((err) => {
 				let errors = err?.data?.errors || ['Unexpected error occured'];

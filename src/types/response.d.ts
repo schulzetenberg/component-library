@@ -1,11 +1,11 @@
 interface ResponseSuccess {
-  message: string;
-  error: string;
+  errors?: string[];
   data: any;
 }
 
 interface ReponseError {
-  errors: string[];
+  errors?: string[];
 }
+
 
 interface ServerResponse extends ResponseSuccess, ReponseError {}

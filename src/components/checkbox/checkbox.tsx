@@ -1,8 +1,15 @@
 import React from 'react';
 import { RHFInput } from 'react-hook-form-input';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 import { Checkbox as MaterialCheckbox, FormControlLabel } from '@material-ui/core';
 
 const RHFInputAny = RHFInput as any; // TODO: Clean up
+
+const useStyles = makeStyles((theme: Theme) => ({
+  label: {
+    userSelect: 'none'
+  },
+}));
 
 export interface CheckboxProps {
   name: string;
@@ -15,6 +22,8 @@ export interface CheckboxProps {
 }
 
 const Checkbox: React.FC<CheckboxProps> = ({ name, label, register, setValue, color = 'primary', errors, ...rest }) => {
+  const classes = useStyles();
+
   return (
     <FormControlLabel
       control={
@@ -29,6 +38,7 @@ const Checkbox: React.FC<CheckboxProps> = ({ name, label, register, setValue, co
           {...rest}
         />
       }
+			className={classes.label}
       label={label}
     />
   );

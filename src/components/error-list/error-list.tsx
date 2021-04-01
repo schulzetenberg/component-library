@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: theme.palette.common.white,
   },
   root: {
+		marginTop: theme.spacing(1),
     width: '100%',
   },
   bullet: {
@@ -42,22 +43,18 @@ const ErrorList: React.FC<ErrorListProps> = ({ errors }) => {
   const bullet = <>{errors.length !== 1 && <span className={classes.bullet}>•</span>}</>;
 
   return (
-    <Grid container justify="center">
-      <Grid xs={12} lg={4} item>
-        <Card className={classes.root}>
-          <CardContent className={classes.cardContent}>
-            <Box component="div" m={0} p={0} style={{ backgroundColor: 'red' }}>
-              <ErrorOutlineIcon fontSize="large" className={classes.icon} />
-            </Box>
-            {errors.map((error: string, index: number) => (
-              <Typography className={classes.errorMessage} key={index} variant="body1">
-                {bullet} {error}
-              </Typography>
-            ))}
-          </CardContent>
-        </Card>
-      </Grid>
-    </Grid>
+		<Card className={classes.root}>
+			<CardContent className={classes.cardContent}>
+				<Box component="div" m={0} p={0} style={{ backgroundColor: 'red' }}>
+					<ErrorOutlineIcon fontSize="large" className={classes.icon} />
+				</Box>
+				{errors.map((error: string, index: number) => (
+					<Typography className={classes.errorMessage} key={index} variant="body1">
+						{bullet} {error}
+					</Typography>
+				))}
+			</CardContent>
+		</Card>
   );
 };
 

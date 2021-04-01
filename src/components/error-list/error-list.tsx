@@ -4,7 +4,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
-import { Box, Grid } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) => ({
   errorMessage: {

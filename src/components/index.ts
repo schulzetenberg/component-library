@@ -14,7 +14,7 @@ import SwitchForm2 from './switch/switch-form2';
 import TextField from './text-field/text-field';
 import TextField2 from './text-field/text-field2';
 import ErrorBoundary from './error-boundary/error-boundary';
-import EditableTable from './editable-table/editable-table';
+import EditableTable, { EditableTableProps } from './editable-table/editable-table';
 
 export {
 	Button,
@@ -42,4 +42,5 @@ export {
 	TextField2,
 	ErrorBoundary,
 	EditableTable,
+	EditableTableProps,
 };

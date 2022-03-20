@@ -6,7 +6,7 @@ import MaterialTable from 'material-table';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({}));
 
-const EditableTable: React.FC<{
+export interface EditableTableProps {
 	tableState: any;
 	setTableState: any;
 	register: any;
@@ -14,7 +14,9 @@ const EditableTable: React.FC<{
   name: any;
 	title: string;
 	columns: any[];
-}> = ({
+}
+
+const EditableTable: React.FC<EditableTableProps> = ({
 	tableState,
 	setTableState,
 	register,

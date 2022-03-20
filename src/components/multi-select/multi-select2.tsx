@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 export interface MultiSelectProps2 {
-  name: string;
+  name: any;
   label?: string;
   control: any;
   errors?: any;
@@ -20,7 +20,7 @@ export interface MultiSelectProps2 {
   [x: string]: any;
 }
 
-const MultiSelect2: React.FC<MultiSelectProps> = ({
+const MultiSelect2: React.FC<MultiSelectProps2> = ({
   label,
   name,
   control,

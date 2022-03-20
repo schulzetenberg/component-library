@@ -2,7 +2,7 @@ import React from 'react';
 
 // eslint-disable-next-line import/no-unresolved
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { useForm  } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 import TextField2 from './text-field2';
 

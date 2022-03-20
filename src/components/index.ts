@@ -6,9 +6,11 @@ import Form from './form/form';
 import Header from './header/header';
 import Modal, { ModalProps } from './modal/modal';
 import MultiSelect, { MultiSelectProps } from './multi-select/multi-select';
+import MultiSelect2, { MultiSelectProps2 } from './multi-select/multi-select2';
 import Spinner, { SpinnerProps } from './spinner/spinner';
 import SwitchComponent from './switch/switch-component';
 import SwitchForm from './switch/switch-form';
+import SwitchForm2 from './switch/switch-form2';
 import TextField from './text-field/text-field';
 import TextField2 from './text-field/text-field2';
 import ErrorBoundary from './error-boundary/error-boundary';
@@ -28,10 +30,13 @@ export {
 	ModalProps,
 	MultiSelect,
 	MultiSelectProps,
+	MultiSelect2,
+	MultiSelectProps2,
 	Spinner,
 	SpinnerProps,
 	SwitchComponent,
 	SwitchForm,
+	SwitchForm2,
 	TextField,
 	TextField2,
 	ErrorBoundary,

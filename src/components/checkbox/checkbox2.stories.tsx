@@ -4,7 +4,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { useForm } from 'react-hook-form';
 
-import Checkbox2, { CheckboxProps } from './checkbox2';
+import Checkbox2, { CheckboxProps2 } from './checkbox2';
 
 export default {
   title: 'Components/Shared/Checkbox 2',
@@ -12,7 +12,7 @@ export default {
   argTypes: {},
 } as Meta;
 
-const Template: Story<CheckboxProps> = (args) => {
+const Template: Story<CheckboxProps2> = (args) => {
 	const { control } = useForm();
 	return <Checkbox2 {...args} control={control} />;
 };

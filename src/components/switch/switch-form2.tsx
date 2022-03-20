@@ -53,7 +53,7 @@ const SwitchForm2: React.FC<any> = ({ control, name, label, errors, fullWidth, .
 				<FormControlLabel
 					label={label}
 					labelPlacement="top"
-					error={!!errors?.[name]}
+					error={errors?.[name]}
 					{...field}
 					{...rest}
 					control={

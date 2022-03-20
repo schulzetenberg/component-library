@@ -1,5 +1,6 @@
 import Button, { ButtonProps } from './button/button';
 import Checkbox, { CheckboxProps } from './checkbox/checkbox';
+import Checkbox2, { CheckboxProps2 } from './checkbox/checkbox2';
 import ErrorList, { ErrorListProps } from './error-list/error-list';
 import Form from './form/form';
 import Header from './header/header';
@@ -17,6 +18,8 @@ export {
 	ButtonProps,
 	Checkbox,
 	CheckboxProps,
+	Checkbox2,
+	CheckboxProps2,
 	ErrorList,
 	ErrorListProps,
 	Form,

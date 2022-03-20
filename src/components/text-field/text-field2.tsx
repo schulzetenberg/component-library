@@ -22,16 +22,17 @@ const TextField2: React.FC<{
 			defaultValue=""
 			render={({ field }: { field: any }) =>
 				<MaterialTextField
-				{...field}
-				rows={12}
-				error={!!errors?.[name]}
-				variant="outlined"
-				margin="normal"
-				InputProps={{ type }}
-				helperText={errors?.[name]?.message}
-				{...rest}
-				data-testid={name}
-			/>}
+					{...field}
+					rows={12}
+					error={!!errors?.[name]}
+					variant="outlined"
+					margin="normal"
+					InputProps={{ type }}
+					helperText={errors?.[name]?.message}
+					{...rest}
+					data-testid={name}
+				/>
+			}
 		/>
   );
 };

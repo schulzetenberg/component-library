@@ -58,6 +58,7 @@ const SwitchForm2: React.FC<any> = ({ control, name, label, errors, fullWidth, .
 					{...rest}
 					control={
 						<MaterialSwitch
+							checked={field.value}
 							focusVisibleClassName={classes.focusVisible}
 							disableRipple
 							classes={{

@@ -17,6 +17,7 @@
     "@material-ui/lab": "4.0.0-alpha.57",
     "@schulzetenberg/eslint-config-react": "^0.0.15",
     "@storybook/addon-actions": "6.4.21",
+    "@storybook/addon-docs": "6.4.21",
     "@storybook/addon-essentials": "6.4.21",
     "@storybook/addon-links": "6.4.21",
     "@storybook/builder-webpack5": "6.4.21",

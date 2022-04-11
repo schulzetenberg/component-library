@@ -4,6 +4,7 @@ import MaterialTable from 'material-table';
 
 import ErrorList from '../../components/error-list/error-list';
 import Request from '../../util/request';
+import { ServerResponse } from '../../types/response';
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
@@ -52,7 +53,7 @@ const AccountTokens: React.FC<{
       } else {
         updateTokens(response.data);
       }
-    } catch (e) {
+    } catch (e: any) {
       setTokenErrors(e);
     } finally {
       setTokenLoading(false);

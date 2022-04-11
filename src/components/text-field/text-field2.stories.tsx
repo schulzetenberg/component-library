@@ -13,8 +13,8 @@ export default {
 } as Meta;
 
 const Template: Story = (args: any) => {
-	const { control } = useForm();
-	return <TextField2 {...args} control={control} />;
+  const { control } = useForm();
+  return <TextField2 {...args} control={control} />;
 };
 
 export const Basic = Template.bind({});
@@ -39,7 +39,7 @@ Labeled.args = {
 export const Required = Template.bind({});
 Required.args = {
   ...Basic.args,
-	label: 'Required',
+  label: 'Required',
   required: true,
 };
 
@@ -47,5 +47,5 @@ export const TextArea = Template.bind({});
 TextArea.args = {
   ...Basic.args,
   multiline: true,
-	fullWidth: true,
+  fullWidth: true,
 };

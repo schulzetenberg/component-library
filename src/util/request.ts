@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { ServerResponse } from '../types/response';
 
 const Request = {
   get: ({ url }: { url: string }): Promise<ServerResponse> => {
@@ -9,12 +10,12 @@ const Request = {
         return response;
       })
       .catch((err) => {
-				let errors = err?.data?.errors || ['Unexpected error occured'];
+        let errors = err?.data?.errors || ['Unexpected error occured'];
 
-				// In case server returns string instead of array, wrap in an array
-				if(!Array.isArray(errors)) {
-					errors = [errors];
-				}
+        // In case server returns string instead of array, wrap in an array
+        if (!Array.isArray(errors)) {
+          errors = [errors];
+        }
 
         return Promise.reject(errors);
       });
@@ -28,12 +29,12 @@ const Request = {
         return response;
       })
       .catch((err) => {
-				let errors = err?.data?.errors || ['Unexpected error occured'];
+        let errors = err?.data?.errors || ['Unexpected error occured'];
 
-				// In case server returns string instead of array, wrap in an array
-				if(!Array.isArray(errors)) {
-					errors = [errors];
-				}
+        // In case server returns string instead of array, wrap in an array
+        if (!Array.isArray(errors)) {
+          errors = [errors];
+        }
 
         return Promise.reject(errors);
       });

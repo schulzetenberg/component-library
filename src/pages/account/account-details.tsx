@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 import { Card, CardHeader, CardContent, CardActions, Divider, Grid } from '@material-ui/core';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -8,7 +8,7 @@ import Form from '../../components/form/form';
 import Button from '../../components/button/button';
 import TextField from '../../components/text-field/text-field';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     buttonGrid: {
       'margin-left': '0.75em',
@@ -22,10 +22,7 @@ const AccountDetails: React.FC<{ data: any; saveData: any; isLoading: boolean }>
   const validationSchema = yup.object().shape({
     firstName: yup.string().required('Required'),
     lastName: yup.string().required('Required'),
-    email: yup
-      .string()
-      .required('Required')
-      .email('Invalid email'),
+    email: yup.string().required('Required').email('Invalid email'),
   });
 
   type FormData = { firstName: string; lastName: string; email: string };

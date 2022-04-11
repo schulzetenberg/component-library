@@ -11,6 +11,7 @@ import { useHistory } from 'react-router-dom';
 import Request from '../../util/request';
 import AppCard from './app-card';
 import ErrorList from '../../components/error-list/error-list';
+import { ServerResponse } from '../../types/response';
 
 const useStyles = makeStyles((theme) => ({
   snackbarContent: {
@@ -51,7 +52,7 @@ const AppConfig: React.FC = () => {
       const response: ServerResponse = await Request.post({ url: '/app-config/config', body });
       setData(response.data);
       setSuccessMessage(messageConstants.saveSuccess);
-    } catch (e) {
+    } catch (e: any) {
       setErrors(e);
     }
   };
@@ -62,9 +63,9 @@ const AppConfig: React.FC = () => {
 
   const handleManualUpdate = async (appName: string) => {
     try {
-      const response: ServerResponse = await Request.post({ url: '/app-config/run-app', body: { app: appName } });
+      await Request.post({ url: '/app-config/run-app', body: { app: appName } });
       setSuccessMessage(messageConstants.runSuccess);
-    } catch (e) {
+    } catch (e: any) {
       setErrors(e);
     }
   };
@@ -121,6 +122,7 @@ const AppConfig: React.FC = () => {
               image="/img/music.jpg"
               lastUpdated={data && data.music.lastUpdated}
               summary="Collect music listening habits from Spotify & LastFM"
+              // eslint-disable-next-line max-len
               description="The data being collected includes the top 15 artists, total number of artists, and number of songs listened to in the past 12 months."
             />
 
@@ -132,6 +134,7 @@ const AppConfig: React.FC = () => {
               image="/img/books.jpg"
               lastUpdated={data && data.goodreads.lastUpdated}
               summary="Collect data on the books read from Goodreads"
+              // eslint-disable-next-line max-len
               description="The data being collected includes the book title, date read, rating, cover image link, number of pages, and number of times read"
             />
 
@@ -143,6 +146,7 @@ const AppConfig: React.FC = () => {
               image="/img/driving.jpg"
               lastUpdated={data && data.fuelly.lastUpdated}
               summary="Collect mileage and fuel data from Fuelly"
+              // eslint-disable-next-line max-len
               description="The data being collected includes the miles driven, amount of fuel consumed, and cost of fuel per vehicle"
             />
 
@@ -154,6 +158,7 @@ const AppConfig: React.FC = () => {
               image="/img/coding.jpg"
               lastUpdated={data && data.github.lastUpdated}
               summary="Collect software contribution data from Github"
+              // eslint-disable-next-line max-len
               description="The data being collected includes a user's number of repos, contributions graphic, and follower & following lists"
             />
 
@@ -211,6 +216,7 @@ const AppConfig: React.FC = () => {
               image="/img/movie.jpg"
               lastUpdated={data && data.trakt.lastUpdated}
               summary="Collect TV & movie viewing data from Trakt"
+              // eslint-disable-next-line max-len
               description="The data being collected includes the number of episodes & movies, ratings, and time spent watching"
             />
 

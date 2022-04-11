@@ -13,30 +13,29 @@ export default {
 } as Meta;
 
 const Template: Story<EditableTableProps> = (args) => {
-	const { setValue, register } = useForm<FormData>();
-	const [tempList, setTempList] = useState([
-		{ name: 'Test 1', value: '100' },
-		{ name: 'Test 2', value: '200' }
-	]);
+  const { setValue, register } = useForm<FormData>();
+  const [tempList, setTempList] = useState([
+    { name: 'Test 1', value: '100' },
+    { name: 'Test 2', value: '200' },
+  ]);
 
- 	return (
-		<EditableTable
-			{...args}
-			tableState={tempList}
-			setTableState={setTempList}
-			setValue={setValue}
-			register={register}
-		/>
-	);
+  return (
+    <EditableTable
+      {...args}
+      tableState={tempList}
+      setTableState={setTempList}
+      setValue={setValue}
+      register={register}
+    />
+  );
 };
 
 export const Basic = Template.bind({});
 Basic.args = {
-	name: 'list',
-	title: 'Assets',
-	columns: [
-		{ title: 'Name', field: 'name' },
-		{ title: '$ Value', field: 'value', type: 'currency' },
-	]
+  name: 'list',
+  title: 'Assets',
+  columns: [
+    { title: 'Name', field: 'name' },
+    { title: '$ Value', field: 'value', type: 'currency' },
+  ],
 };
-

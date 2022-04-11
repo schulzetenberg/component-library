@@ -4,15 +4,15 @@ import { useCallback } from 'react';
 
 const useValidation = (validationSchema: any) =>
   useCallback(
-    async data => {
+    async (data) => {
       try {
         const values = await validationSchema.validate(data, {
-          abortEarly: false
+          abortEarly: false,
         });
 
         return {
           values,
-          errors: {}
+          errors: {},
         };
       } catch (errors: any) {
         return {
@@ -22,15 +22,15 @@ const useValidation = (validationSchema: any) =>
               ...allErrors,
               [currentError.path]: {
                 type: currentError.type ?? 'validation',
-                message: currentError.message
-              }
+                message: currentError.message,
+              },
             }),
             {}
-          )
+          ),
         };
       }
     },
     [validationSchema]
   );
 
-	export default useValidation;
+export default useValidation;

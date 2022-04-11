@@ -4,8 +4,8 @@ import { Grid } from '@material-ui/core';
 import ErrorList from '../error-list/error-list';
 
 export interface ErrorBoundaryProps {
-	children: ReactNode;
-	testMode?: boolean;
+  children: ReactNode;
+  testMode?: boolean;
 }
 
 interface State {
@@ -13,10 +13,12 @@ interface State {
 }
 
 class ErrorBoundary extends Component<ErrorBoundaryProps, State> {
+  // eslint-disable-next-line react/state-in-constructor
   public state: State = {
-    hasError: false
+    hasError: false,
   };
 
+  // eslint-disable-next-line no-unused-vars
   public static getDerivedStateFromError(_: Error): State {
     // Update state so the next render will show the fallback UI.
     return { hasError: true };
@@ -27,12 +29,16 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, State> {
   }
 
   public render() {
+    // eslint-disable-next-line react/destructuring-assignment
     if (this.state.hasError || this.props.testMode) {
-			return <Grid item xs={12}>
-				<ErrorList errors={['Uh oh! An error has occured']} />
-			</Grid>;
+      return (
+        <Grid item xs={12}>
+          <ErrorList errors={['Uh oh! An error has occured']} />
+        </Grid>
+      );
     }
 
+    // eslint-disable-next-line react/destructuring-assignment
     return this.props.children;
   }
 }

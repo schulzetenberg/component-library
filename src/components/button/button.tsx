@@ -16,17 +16,17 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export interface ButtonProps {
-	children: ReactElement;
-	type: string;
-	errors: string[];
-	name: string;
-	register: any;
-	color: string;
-	variant: string;
-	setValue: any;
-	loading: boolean;
+  children: ReactElement;
+  type: string;
+  errors: string[];
+  name: string;
+  register: any;
+  color: string;
+  variant: string;
+  setValue: any;
+  loading: boolean;
   [x: string]: any;
-};
+}
 
 const Button: React.FC<any> = ({
   children,

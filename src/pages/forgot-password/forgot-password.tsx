@@ -16,6 +16,7 @@ import Form from '../../components/form/form';
 import TextField from '../../components/text-field/text-field';
 import Request from '../../util/request';
 import ErrorList from '../../components/error-list/error-list';
+import { ServerResponse } from '../../types/response';
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -45,10 +46,7 @@ const ForgotPassword: React.FC = () => {
   const [loginErrors, setLoginErrors] = useState<string[]>([]);
 
   const validationSchema = yup.object().shape({
-    email: yup
-      .string()
-      .required('Required')
-      .email('Invalid email'),
+    email: yup.string().required('Required').email('Invalid email'),
   });
 
   type FormData = {
@@ -70,7 +68,7 @@ const ForgotPassword: React.FC = () => {
       const response: ServerResponse = await Request.post({ url: '/forgot', body: inputs });
       setResetSuccess(true);
       setLoginErrors(response.errors);
-    } catch (e) {
+    } catch (e: any) {
       setLoginErrors(e);
     } finally {
       setLoading(false);

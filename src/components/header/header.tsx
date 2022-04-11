@@ -45,7 +45,7 @@ const Header: React.FC<{ forceLoggedIn?: boolean }> = ({ forceLoggedIn = false }
       await Request.post({ url: '/logout' });
       setSession();
       history.push('/sign-in');
-    } catch (e) {
+    } catch (e: any) {
       setLoading(false);
       setLogoutErrors(e);
     }
@@ -87,7 +87,13 @@ const Header: React.FC<{ forceLoggedIn?: boolean }> = ({ forceLoggedIn = false }
         {isLoggedIn && (
           <nav>
             {/*
-						<Link variant="button" component={RouterLink} to="/app-config" color="textPrimary" className={classes.link}>
+						<Link
+							variant="button"
+							component={RouterLink}
+							to="/app-config"
+							color="textPrimary"
+							 className={classes.link
+						>
               Settings
 						</Link>
 						*/}

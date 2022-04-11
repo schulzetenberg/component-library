@@ -17,6 +17,7 @@ import TextField from '../../components/text-field/text-field';
 import Request from '../../util/request';
 import { SessionContext } from '../../util/session-context';
 import ErrorList from '../../components/error-list/error-list';
+import { ServerResponse } from '../../types/response';
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -50,7 +51,7 @@ const SignUp: React.FC = () => {
       const response: ServerResponse = await Request.post({ url: '/signup', body: inputs });
       setSession({ email: response.data.email });
       history.push('/');
-    } catch (e) {
+    } catch (e: any) {
       setLoading(false);
       setSignupErrors(e);
     }
@@ -59,18 +60,9 @@ const SignUp: React.FC = () => {
   const validationSchema = yup.object().shape({
     firstName: yup.string().required('Required'),
     lastName: yup.string().required('Required'),
-    email: yup
-      .string()
-      .required('Required')
-      .email('Invalid email'),
-    password: yup
-      .string()
-      .required('Required')
-      .min(4, 'Password must be at least 4 characters long'),
-    confirmPassword: yup
-      .string()
-      .required('Required')
-      .min(4, 'Password must be at least 4 characters long'),
+    email: yup.string().required('Required').email('Invalid email'),
+    password: yup.string().required('Required').min(4, 'Password must be at least 4 characters long'),
+    confirmPassword: yup.string().required('Required').min(4, 'Password must be at least 4 characters long'),
   });
 
   type FormData = { firstName: string; lastName: string; email: string; password: string; confirmPassword: string };
@@ -135,7 +127,7 @@ const SignUp: React.FC = () => {
               </Grid>
               <Grid item>
                 <Link component={RouterLink} to="/sign-in" variant="body2">
-                  {'Already have an account? Sign In'}
+                  Already have an account? Sign In
                 </Link>
               </Grid>
             </Grid>

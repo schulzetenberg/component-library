@@ -13,8 +13,8 @@ export default {
 } as Meta;
 
 const Template: Story<CheckboxProps2> = (args) => {
-	const { control } = useForm();
-	return <Checkbox2 {...args} control={control} />;
+  const { control } = useForm();
+  return <Checkbox2 {...args} control={control} />;
 };
 
 export const Basic = Template.bind({});

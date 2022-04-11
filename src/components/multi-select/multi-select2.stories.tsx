@@ -21,8 +21,8 @@ export default {
 } as Meta;
 
 const Template: Story<MultiSelectProps2> = (args) => {
-	const { control } = useForm();
-	return <MultiSelect2 {...args} control={control} />;
+  const { control } = useForm();
+  return <MultiSelect2 {...args} control={control} />;
 };
 
 export const Basic = Template.bind({});

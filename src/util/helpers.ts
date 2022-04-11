@@ -10,4 +10,4 @@ export async function asyncForEach(array: any, callback: Function): Promise<any>
     // eslint-disable-next-line no-await-in-loop
     await callback(array[index], index, array);
   }
-};
+}

@@ -21,6 +21,7 @@ const SessionContextProvider = ({ children }: any): any => {
     setSessionCookie(val);
   };
 
+  // eslint-disable-next-line react/jsx-no-constructed-context-values
   return <SessionContext.Provider value={{ session, setSession }}>{children}</SessionContext.Provider>;
 };
 

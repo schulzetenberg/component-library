@@ -1,7 +1,7 @@
 import React from 'react';
 import { RHFInput } from 'react-hook-form-input';
 import Select from 'react-select';
-import { InputLabel, FormControl, Theme, makeStyles, useTheme, FormHelperText } from '@material-ui/core';
+import { InputLabel, FormControl, Theme, makeStyles, FormHelperText } from '@material-ui/core';
 
 const RHFInputAny = RHFInput as any; // TODO: Clean up
 
@@ -34,7 +34,6 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
   ...rest
 }) => {
   const classes = useStyles();
-  const theme = useTheme();
 
   return (
     <FormControl fullWidth={fullWidth}>

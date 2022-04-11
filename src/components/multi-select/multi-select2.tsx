@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Select from 'react-select';
-import { InputLabel, FormControl, Theme, makeStyles, useTheme, FormHelperText } from '@material-ui/core';
+import { InputLabel, FormControl, Theme, makeStyles, FormHelperText } from '@material-ui/core';
 import { Controller } from 'react-hook-form';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -31,36 +31,31 @@ const MultiSelect2: React.FC<MultiSelectProps2> = ({
   ...rest
 }) => {
   const classes = useStyles();
-  const theme = useTheme();
 
   return (
-		<Controller
-			name={name}
-			control={control}
-			defaultValue=''
-			render={({ field }: { field: any }) =>
-				<FormControl fullWidth={fullWidth}>
-					{/* TOO: Label is not showing up correctly */}
-					<InputLabel htmlFor={name}>{label}</InputLabel>
-					<Select
-						isMulti
-						options={options}
-						isDisabled={disabled}
-						error={errors && errors[name] ? true : undefined}
-						variant="outlined"
-						margin="normal"
-						{...field}
-						{...rest}
-					/>
+    <Controller
+      name={name}
+      control={control}
+      defaultValue=""
+      render={({ field }: { field: any }) => (
+        <FormControl fullWidth={fullWidth}>
+          {/* TOO: Label is not showing up correctly */}
+          <InputLabel htmlFor={name}>{label}</InputLabel>
+          <Select
+            isMulti
+            options={options}
+            isDisabled={disabled}
+            error={errors && errors[name] ? true : undefined}
+            variant="outlined"
+            margin="normal"
+            {...field}
+            {...rest}
+          />
 
-					{!!errors?.[name] &&
-						<FormHelperText className={classes.errorText}>
-							{errors[name].message}
-						</FormHelperText>
-					}
-				</FormControl>
-			}
-		/>
+          {!!errors?.[name] && <FormHelperText className={classes.errorText}>{errors[name].message}</FormHelperText>}
+        </FormControl>
+      )}
+    />
   );
 };
 

@@ -45,34 +45,34 @@ const SwitchForm2: React.FC<any> = ({ control, name, label, errors, fullWidth, .
   const classes = useStyles();
 
   return (
-		<Controller
-			name={name}
-			control={control}
-			defaultValue={false}
-			render={({ field }: { field: any }) =>
-				<FormControlLabel
-					label={label}
-					labelPlacement="top"
-					error={errors?.[name]}
-					{...field}
-					{...rest}
-					control={
-						<MaterialSwitch
-							checked={field.value}
-							focusVisibleClassName={classes.focusVisible}
-							disableRipple
-							classes={{
-								root: classes.root,
-								switchBase: classes.switchBase,
-								thumb: classes.thumb,
-								track: classes.track,
-								checked: classes.checked,
-							}}
-						/>
-					}
-				/>
-			}
-		/>
+    <Controller
+      name={name}
+      control={control}
+      defaultValue={false}
+      render={({ field }: { field: any }) => (
+        <FormControlLabel
+          label={label}
+          labelPlacement="top"
+          error={errors?.[name]}
+          {...field}
+          {...rest}
+          control={
+            <MaterialSwitch
+              checked={field.value}
+              focusVisibleClassName={classes.focusVisible}
+              disableRipple
+              classes={{
+                root: classes.root,
+                switchBase: classes.switchBase,
+                thumb: classes.thumb,
+                track: classes.track,
+                checked: classes.checked,
+              }}
+            />
+          }
+        />
+      )}
+    />
   );
 };
 

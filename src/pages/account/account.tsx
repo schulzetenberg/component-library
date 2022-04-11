@@ -10,6 +10,7 @@ import AccountPassword from './account-password';
 import Request from '../../util/request';
 import ErrorList from '../../components/error-list/error-list';
 import AccountTokens from './account-tokens';
+import { ServerResponse } from '../../types/response';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +22,7 @@ const Account: React.FC = () => {
   const classes = useStyles();
   const [data, setData] = useState();
   const history = useHistory();
-  const { session, setSession }: any = React.useContext(SessionContext);
+  const { setSession }: any = React.useContext(SessionContext);
   const [isLoading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
@@ -55,7 +56,7 @@ const Account: React.FC = () => {
       const response: ServerResponse = await Request.post({ url: '/account/profile', body: updatedData });
       setData(response.data);
       setShowProfile(false);
-    } catch (e) {
+    } catch (e: any) {
       setServerErrors(e);
     } finally {
       setLoading(false);
@@ -91,7 +92,7 @@ const Account: React.FC = () => {
       // TODO: add toast messages & error handling
       alert('Updated');
       // TODO: Clear out password fields
-    } catch (e) {
+    } catch (e: any) {
       setServerErrors(e);
     } finally {
       setLoadingPassword(false);

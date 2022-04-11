@@ -1,6 +1,5 @@
 import './components';
-export * from './components';
+import './util'; // TODO: Import under the /util folder
 
-// TODO: Import under the /util folder
-import './util';
+export * from './components';
 export * from './util';

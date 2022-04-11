@@ -25,5 +25,5 @@ Basic.args = {};
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
-	forceLoggedIn: true
+  forceLoggedIn: true,
 };

@@ -18,6 +18,7 @@ import TextField from '../../components/text-field/text-field';
 import Request from '../../util/request';
 import { SessionContext } from '../../util/session-context';
 import ErrorList from '../../components/error-list/error-list';
+import { ServerResponse } from '../../types/response';
 
 const useStyles = makeStyles((theme: Theme) => ({
   '@global': {
@@ -49,10 +50,7 @@ const SignIn: React.FC = ({ location }: any) => {
   const { setSession }: any = React.useContext(SessionContext);
 
   const validationSchema = yup.object().shape({
-    email: yup
-      .string()
-      .required('Required')
-      .email('Invalid email'),
+    email: yup.string().required('Required').email('Invalid email'),
     password: yup.string().required('Required'),
   });
 

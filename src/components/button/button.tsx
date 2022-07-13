@@ -38,6 +38,7 @@ const Button: React.FC<any> = ({
   variant = 'contained',
   setValue,
   loading = false,
+  className,
   ...rest
 }): any => {
   const classes = useStyles();
@@ -52,7 +53,7 @@ const Button: React.FC<any> = ({
       data-testid={name}
       name={name}
       {...rest}
-      className={classNames(classes.button, { [classes.submit]: type === 'submit' })}
+      className={classNames(classes.button, className, { [classes.submit]: type === 'submit' })}
     >
       {content}
     </MaterialButton>

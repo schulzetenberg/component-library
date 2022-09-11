@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Select from 'react-select';
-import { InputLabel, FormControl, Theme, makeStyles, FormHelperText } from '@material-ui/core';
+import { FormControl, Theme, makeStyles, FormHelperText, FormLabel } from '@material-ui/core';
 import { Controller } from 'react-hook-form';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -27,7 +27,7 @@ const MultiSelect2: React.FC<MultiSelectProps2> = ({
   errors,
   options,
   fullWidth = true,
-  disabled,
+  disabled = false,
   ...rest
 }) => {
   const classes = useStyles();
@@ -39,8 +39,7 @@ const MultiSelect2: React.FC<MultiSelectProps2> = ({
       defaultValue=""
       render={({ field }: { field: any }) => (
         <FormControl fullWidth={fullWidth}>
-          {/* TOO: Label is not showing up correctly */}
-          <InputLabel htmlFor={name}>{label}</InputLabel>
+          <FormLabel htmlFor={name}>{label}</FormLabel>
           <Select
             isMulti
             options={options}

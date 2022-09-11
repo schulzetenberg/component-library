@@ -4,7 +4,7 @@ import { useCallback } from 'react';
 
 const useValidation = (validationSchema: any) =>
   useCallback(
-    async (data) => {
+    async (data: any) => {
       try {
         const values = await validationSchema.validate(data, {
           abortEarly: false,

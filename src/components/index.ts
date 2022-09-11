@@ -1,3 +1,4 @@
+import Radio, { RadioProps } from './radio/radio';
 import Button, { ButtonProps } from './button/button';
 import Checkbox, { CheckboxProps } from './checkbox/checkbox';
 import Checkbox2, { CheckboxProps2 } from './checkbox/checkbox2';
@@ -43,4 +44,6 @@ export {
   ErrorBoundary,
   EditableTable,
   EditableTableProps,
+  Radio,
+  RadioProps,
 };

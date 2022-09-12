@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link as RouterLink, useHistory } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { Box, Snackbar, SnackbarContent } from '@material-ui/core';
 
 import { SessionContext } from '../../util/session-context';
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Header: React.FC<{ forceLoggedIn?: boolean }> = ({ forceLoggedIn = false }) => {
   const classes = useStyles();
-  const history = useHistory();
+  const navigate = useNavigate();
   const { session, setSession }: any = React.useContext(SessionContext);
   const [isLoading, setLoading] = useState(false);
   const [logoutErrors, setLogoutErrors] = useState<string[]>([]);
@@ -44,7 +44,7 @@ const Header: React.FC<{ forceLoggedIn?: boolean }> = ({ forceLoggedIn = false }
     try {
       await Request.post({ url: '/logout' });
       setSession();
-      history.push('/sign-in');
+      navigate('/sign-in');
     } catch (e: any) {
       setLoading(false);
       setLogoutErrors(e);

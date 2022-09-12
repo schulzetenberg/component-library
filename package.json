@@ -1,6 +1,6 @@
 {
   "name": "@schulzetenberg/component-library",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "private": false,
   "files": [
     "dist"
@@ -34,7 +34,7 @@
     "@types/js-cookie": "2.2.4",
     "@types/react": "18.0.19",
     "@types/react-dom": "18.0.6",
-    "@types/react-router-dom": "5.1.2",
+    "@types/react-router-dom": "5.3.3",
     "@types/react-select": "3.0.8",
     "@types/yup": "0.26.26",
     "axios": "0.19.0",
@@ -42,7 +42,7 @@
     "clsx": "1.0.4",
     "history": "4.10.1",
     "js-cookie": "2.2.1",
-    "material-table": "1.69.2",
+    "material-table": "2.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "7.28.0",

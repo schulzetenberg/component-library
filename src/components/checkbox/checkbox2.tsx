@@ -1,6 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Checkbox as MaterialCheckbox, FormControlLabel } from '@material-ui/core';
+import makeStyles from '@mui/styles/makeStyles';
+import { Checkbox as MaterialCheckbox, FormControlLabel } from '@mui/material';
 import { Controller } from 'react-hook-form';
 
 const useStyles = makeStyles(() => ({

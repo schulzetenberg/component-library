@@ -1,6 +1,8 @@
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import { Fade } from '@material-ui/core';
+import { Theme } from '@mui/material/styles';
+import makeStyles from '@mui/styles/makeStyles';
+import createStyles from '@mui/styles/createStyles';
+import { Fade } from '@mui/material';
 import classNames from 'classnames';
 
 const useStyles = makeStyles((theme: Theme) =>

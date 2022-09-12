@@ -1,10 +1,11 @@
 import React from 'react';
-import { makeStyles, Theme } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
-import { Box } from '@material-ui/core';
+import { Theme } from '@mui/material/styles';
+import makeStyles from '@mui/styles/makeStyles';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import { Box } from '@mui/material';
 
 const useStyles = makeStyles((theme: Theme) => ({
   errorMessage: {

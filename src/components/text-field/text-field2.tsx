@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TextField as MaterialTextField } from '@material-ui/core';
+import { TextField as MaterialTextField } from '@mui/material';
 import { Controller } from 'react-hook-form';
 
 const TextField2: React.FC<{

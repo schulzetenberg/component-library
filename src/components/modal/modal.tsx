@@ -1,8 +1,10 @@
 import React, { ReactElement } from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import { Modal as MaterialModal } from '@material-ui/core';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
+import { Theme } from '@mui/material/styles';
+import makeStyles from '@mui/styles/makeStyles';
+import createStyles from '@mui/styles/createStyles';
+import { Modal as MaterialModal } from '@mui/material';
+import Backdrop from '@mui/material/Backdrop';
+import Fade from '@mui/material/Fade';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -17,6 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
     paper: {
       backgroundColor: theme.palette.background.paper,
       outline: 0,
+      zIndex: 2,
       borderRadius: 5,
       padding: theme.spacing(2, 4, 3),
     },

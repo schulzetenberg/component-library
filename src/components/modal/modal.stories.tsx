@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 
 // eslint-disable-next-line import/no-unresolved
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Grid } from '@material-ui/core';
+import { Grid } from '@mui/material';
 
 import Modal, { ModalProps } from './modal';
 

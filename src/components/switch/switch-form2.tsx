@@ -1,7 +1,9 @@
 import React from 'react';
 
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import { Switch as MaterialSwitch, FormControlLabel } from '@material-ui/core';
+import { Theme } from '@mui/material/styles';
+import makeStyles from '@mui/styles/makeStyles';
+import createStyles from '@mui/styles/createStyles';
+import { Switch as MaterialSwitch, FormControlLabel } from '@mui/material';
 import { Controller } from 'react-hook-form';
 
 const useStyles = makeStyles((theme: Theme) =>

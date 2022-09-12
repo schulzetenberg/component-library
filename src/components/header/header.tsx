@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
-import { makeStyles } from '@material-ui/core/styles';
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import { Box, Snackbar, SnackbarContent } from '@material-ui/core';
+import AppBar from '@mui/material/AppBar';
+import Button from '@mui/material/Button';
+import { Theme } from '@mui/material/styles';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
+import makeStyles from '@mui/styles/makeStyles';
+import { Link as RouterLink, useHistory } from 'react-router-dom';
+import { Box, Snackbar, SnackbarContent } from '@mui/material';
 
 import { SessionContext } from '../../util/session-context';
 import Request from '../../util/request';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   toolbar: {
     flexWrap: 'wrap',
   },
@@ -31,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Header: React.FC<{ forceLoggedIn?: boolean }> = ({ forceLoggedIn = false }) => {
   const classes = useStyles();
-  const navigate = useNavigate();
+  const history = useHistory();
   const { session, setSession }: any = React.useContext(SessionContext);
   const [isLoading, setLoading] = useState(false);
   const [logoutErrors, setLogoutErrors] = useState<string[]>([]);
@@ -44,7 +45,7 @@ const Header: React.FC<{ forceLoggedIn?: boolean }> = ({ forceLoggedIn = false }
     try {
       await Request.post({ url: '/logout' });
       setSession();
-      navigate('/sign-in');
+      history.push('/sign-in');
     } catch (e: any) {
       setLoading(false);
       setLogoutErrors(e);

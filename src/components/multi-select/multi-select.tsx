@@ -1,7 +1,9 @@
 import React from 'react';
 import { RHFInput } from 'react-hook-form-input';
 import Select from 'react-select';
-import { InputLabel, FormControl, Theme, makeStyles, FormHelperText } from '@material-ui/core';
+import { FormLabel, FormControl, Theme, FormHelperText } from '@mui/material';
+
+import makeStyles from '@mui/styles/makeStyles';
 
 const RHFInputAny = RHFInput as any; // TODO: Clean up
 
@@ -36,9 +38,8 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
   const classes = useStyles();
 
   return (
-    <FormControl fullWidth={fullWidth}>
-      {/* TOO: Label is not showing up correctly */}
-      <InputLabel htmlFor={name}>{label}</InputLabel>
+    <FormControl variant="standard" fullWidth={fullWidth}>
+      <FormLabel htmlFor={name}>{label}</FormLabel>
       <RHFInputAny
         as={<Select isMulti options={options} isDisabled={disabled} />}
         name={name}

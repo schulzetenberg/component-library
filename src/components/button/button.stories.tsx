@@ -17,12 +17,6 @@ Basic.args = {
   children: 'Button',
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  ...Basic.args,
-  color: 'default',
-};
-
 export const Secondary = Template.bind({});
 Secondary.args = {
   ...Basic.args,

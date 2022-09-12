@@ -1,6 +1,9 @@
 import React from 'react';
-import { CircularProgress, Grid } from '@material-ui/core';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { CircularProgress, Grid } from '@mui/material';
+import { Theme } from '@mui/material/styles';
+
+import makeStyles from '@mui/styles/makeStyles';
+import createStyles from '@mui/styles/createStyles';
 
 export interface SpinnerProps {
   isPage?: boolean;
@@ -19,7 +22,7 @@ const Spinner: React.FC<SpinnerProps> = ({ isPage = false, ...rest }) => {
   const pageProps = isPage ? { size: 60 } : null;
 
   return (
-    <Grid container justify="center">
+    <Grid container justifyContent="center">
       <CircularProgress className={isPage ? classes.page : ''} {...pageProps} {...rest} />
     </Grid>
   );

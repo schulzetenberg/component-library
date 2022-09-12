@@ -1,15 +1,9 @@
 import React from 'react';
 
-import Radio from '@material-ui/core/Radio';
-import {
-  FormControl,
-  FormHelperText,
-  FormLabel,
-  makeStyles,
-  RadioGroup as MatRadioGroup,
-  Theme,
-} from '@material-ui/core';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Radio from '@mui/material/Radio';
+import { FormControl, FormHelperText, FormLabel, RadioGroup as MatRadioGroup, Theme } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import { Controller } from 'react-hook-form';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -50,7 +44,7 @@ const RadioGroup: React.FC<RadioProps> = ({
       name={name}
       control={control}
       render={({ field }: { field: any }) => (
-        <FormControl fullWidth={fullWidth}>
+        <FormControl variant="standard" fullWidth={fullWidth}>
           <FormLabel id={name}>
             {label}
             {required ? '*' : ''}

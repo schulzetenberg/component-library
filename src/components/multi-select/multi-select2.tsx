@@ -1,7 +1,8 @@
 import React from 'react';
 
 import Select from 'react-select';
-import { FormControl, Theme, makeStyles, FormHelperText, FormLabel } from '@material-ui/core';
+import { FormControl, Theme, FormHelperText, FormLabel } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { Controller } from 'react-hook-form';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -38,7 +39,7 @@ const MultiSelect2: React.FC<MultiSelectProps2> = ({
       control={control}
       defaultValue=""
       render={({ field }: { field: any }) => (
-        <FormControl fullWidth={fullWidth}>
+        <FormControl variant="standard" fullWidth={fullWidth}>
           <FormLabel htmlFor={name}>{label}</FormLabel>
           <Select
             isMulti

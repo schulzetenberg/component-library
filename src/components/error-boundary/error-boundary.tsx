@@ -1,5 +1,5 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid } from '@mui/material';
 
 import ErrorList from '../error-list/error-list';
 

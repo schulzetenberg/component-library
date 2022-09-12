@@ -1,7 +1,7 @@
 import React from 'react';
 import { RHFInput } from 'react-hook-form-input';
-import { makeStyles } from '@material-ui/core/styles';
-import { Checkbox as MaterialCheckbox, FormControlLabel } from '@material-ui/core';
+import makeStyles from '@mui/styles/makeStyles';
+import { Checkbox as MaterialCheckbox, FormControlLabel } from '@mui/material';
 
 const RHFInputAny = RHFInput as any; // TODO: Clean up
 

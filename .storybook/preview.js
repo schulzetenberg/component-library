@@ -1,14 +1,17 @@
 import React from 'react';
 import { addDecorator } from '@storybook/react';
-import { ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import StoryRouter from 'storybook-react-router';
 
 import theme from '../src/theme';
 
+addDecorator((story) => <StyledEngineProvider injectFirst>
+  <ThemeProvider theme={theme}>{story()}</ThemeProvider>
+</StyledEngineProvider>);
+
 addDecorator(StoryRouter());
 
-addDecorator((story) => <ThemeProvider theme={theme}>{story()}</ThemeProvider>);
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

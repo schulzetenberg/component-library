@@ -44,9 +44,12 @@ const EditableTable: React.FC<EditableTableProps> = ({
             const changedItemIndex = tableState.findIndex((x: any) => x.tableData?.id === oldData.tableData?.id);
 
             const newList = [...tableState];
-            newList[changedItemIndex].name = newData.name;
-            newList[changedItemIndex].url = newData.url;
 
+            Object.keys(newData).forEach((property) => {
+              newList[changedItemIndex][property] = newData[property];
+            });
+
+            delete newList[changedItemIndex].tableData.editing;
             setValue(name, newList);
             setTableState(newList);
             resolve();

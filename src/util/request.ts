@@ -10,11 +10,17 @@ const Request = {
         return response;
       })
       .catch((err) => {
-        let errors = err?.data?.errors || ['Unexpected error occured'];
+        let errors;
 
-        // In case server returns string instead of array, wrap in an array
-        if (!Array.isArray(errors)) {
-          errors = [errors];
+        if (err && (typeof err === 'string' || err instanceof String)) {
+          errors = [err];
+        } else {
+          errors = err?.data?.errors || ['Unexpected error occured'];
+
+          // In case server returns string instead of array, wrap in an array
+          if (!Array.isArray(errors)) {
+            errors = [errors];
+          }
         }
 
         return Promise.reject(errors);
@@ -29,11 +35,17 @@ const Request = {
         return response;
       })
       .catch((err) => {
-        let errors = err?.data?.errors || ['Unexpected error occured'];
+        let errors;
 
-        // In case server returns string instead of array, wrap in an array
-        if (!Array.isArray(errors)) {
-          errors = [errors];
+        if (err && (typeof err === 'string' || err instanceof String)) {
+          errors = [err];
+        } else {
+          errors = err?.data?.errors || ['Unexpected error occured'];
+
+          // In case server returns string instead of array, wrap in an array
+          if (!Array.isArray(errors)) {
+            errors = [errors];
+          }
         }
 
         return Promise.reject(errors);

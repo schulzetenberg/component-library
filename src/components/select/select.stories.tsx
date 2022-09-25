@@ -1,0 +1,63 @@
+import React, { ReactElement } from 'react';
+
+// eslint-disable-next-line import/no-unresolved
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { Grid } from '@mui/material';
+import { useForm } from 'react-hook-form';
+
+import Select, { SelectProps } from './select';
+
+export default {
+  title: 'Components/Shared/Select',
+  component: Select,
+  decorators: [
+    (StoryComponent): ReactElement => (
+      <Grid item xs={12} sm={6}>
+        <StoryComponent />
+      </Grid>
+    ),
+  ],
+  argTypes: {},
+} as Meta;
+
+const Template: Story<SelectProps> = (args) => {
+  const { control } = useForm();
+  return <Select {...args} control={control} />;
+};
+
+export const Basic = Template.bind({});
+Basic.args = {
+  label: 'Label Value',
+  name: 'Select',
+  errors: [],
+  options: [
+    { value: 'Option 1', label: 'Option 1 Label' },
+    { value: 'Option 2', label: 'Option 2 Label' },
+  ],
+  disabled: false,
+  isLoading: false,
+};
+
+export const Multi = Template.bind({});
+Multi.args = {
+  ...Basic.args,
+  isMulti: true,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  ...Basic.args,
+  disabled: true,
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  ...Basic.args,
+  isLoading: true,
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  ...Basic.args,
+  errors: { Select: { message: 'Error Message' } },
+};

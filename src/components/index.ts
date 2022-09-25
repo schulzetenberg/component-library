@@ -6,6 +6,7 @@ import ErrorList, { ErrorListProps } from './error-list/error-list';
 import Form from './form/form';
 import Header from './header/header';
 import Modal, { ModalProps } from './modal/modal';
+import Select, { SelectProps } from './select/select';
 import MultiSelect, { MultiSelectProps } from './multi-select/multi-select';
 import MultiSelect2, { MultiSelectProps2 } from './multi-select/multi-select2';
 import Spinner, { SpinnerProps } from './spinner/spinner';
@@ -30,6 +31,8 @@ export {
   Header,
   Modal,
   ModalProps,
+  Select,
+  SelectProps,
   MultiSelect,
   MultiSelectProps,
   MultiSelect2,

@@ -1,8 +1,6 @@
-// TODO: Use select component instead and pass isMulti=true
-
 import React from 'react';
 
-import Select from 'react-select';
+import ReactSelect from 'react-select';
 import { FormControl, Theme, FormHelperText, FormLabel } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import { Controller } from 'react-hook-form';
@@ -14,7 +12,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-export interface MultiSelectProps2 {
+export interface SelectProps {
   name: any;
   label?: string;
   control: any;
@@ -23,7 +21,7 @@ export interface MultiSelectProps2 {
   [x: string]: any;
 }
 
-const MultiSelect2: React.FC<MultiSelectProps2> = ({
+const Select: React.FC<SelectProps> = ({
   label,
   name,
   control,
@@ -43,8 +41,7 @@ const MultiSelect2: React.FC<MultiSelectProps2> = ({
       render={({ field }: { field: any }) => (
         <FormControl variant="standard" fullWidth={fullWidth}>
           <FormLabel htmlFor={name}>{label}</FormLabel>
-          <Select
-            isMulti
+          <ReactSelect
             options={options}
             isDisabled={disabled}
             error={errors && errors[name] ? true : undefined}
@@ -61,4 +58,4 @@ const MultiSelect2: React.FC<MultiSelectProps2> = ({
   );
 };
 
-export default MultiSelect2;
+export default Select;
